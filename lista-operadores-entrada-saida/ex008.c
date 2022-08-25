@@ -6,6 +6,6 @@ int main()
 
     printf("Digite um caracter: ");
     scanf("%c", &aux);
-    printf("%d". aux);
+    printf("%d", aux);
     return 0;
 }
