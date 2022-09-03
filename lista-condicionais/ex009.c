@@ -14,21 +14,39 @@ Não se esqueça da inicialização da semente:srand(time(NULL)).
 int main()
 {
     srand(time(NULL));
-    int n1, n2, resultado;
+    int n1, n2, operacao, resultado, resposta;
+    char simbolo[4] = {'+', '*', '/', '%'};
     time_t inicio_segudos, fim_segundos, tempo_gasto;
     
     n1 = rand()%100 + 1;
     n2 = rand()%100 + 1;
+    operacao = rand()%5;
 
     time(&inicio_segudos);
-    printf("Qual o resultado de %d + %d?: ", n1, n2);
-    scanf("%d", &resultado);
+    printf("Qual o resultado de %d %c %d?: ", n1, simbolo[operacao], n2);
+    scanf("%d", &resposta);
     time(&fim_segundos);
     tempo_gasto = fim_segundos - inicio_segudos;
 
-    if(resultado == (n1 + n2))
+    switch (operacao)
+    {
+    case 0:
+        resultado = n1 + n2;
+        break;
+    case 1:
+        resultado = n1 * n2;
+        break;
+    case 2:
+        resultado = n1 / n2;
+        break;
+    case 3:
+        resultado = n1 % n2;
+        break;
+    }
+
+    if(resultado == resposta)
         printf("Voce acertou em %li segungos.\n", tempo_gasto);
     else
-        printf("Voce errou em %li segungos. A resposta correta e' %d.\n", tempo_gasto, n1 + n2);
+        printf("Voce errou em %li segungos. A resposta correta e' %d.\n", tempo_gasto, resultado);
     return 0;
 }

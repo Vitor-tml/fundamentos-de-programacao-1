@@ -29,7 +29,7 @@ int main()
     atual.tm_year += 1900;
     atual.tm_mon += 1;
 
-    // Calcula a diferença entre as daas
+    // Calcula a diferença entre as datas
     idade.tm_mday = atual.tm_mday - aniversario.tm_mday;
     idade.tm_mon = atual.tm_mon - aniversario.tm_mon;
     idade.tm_year = atual.tm_year - aniversario.tm_year;
