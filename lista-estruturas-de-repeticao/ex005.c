@@ -6,7 +6,7 @@ int main()
     printf("Enter a number: ");
     scanf("%d", &number);
 
-    for(i = 0; i < number; i++)
+    for(i = 1; i < number; i++)
     {
         
         if(number % i == 0)
