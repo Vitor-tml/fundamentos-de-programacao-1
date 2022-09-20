@@ -14,16 +14,16 @@ int main()
         primo = 1;
         for(j = 2; j < numero; j++)
         {
-            if(numero%j)
-            {
+            if(!(numero%j))
+            {   
                 primo = 0;
                 break;
             }
         }
         if(primo)
         {
-            printf("%d ", numero);
             soma += numero;
         }
     }
-    printf("= %d\n", soma);
+    printf("= %d\n", --soma);
+}
