@@ -14,6 +14,14 @@ int ehPermutacao(int n1, int n2);
 
 int main()
 {
+    int n1 = 1234;
+    int n2 = 1235;
+
+    if(ehPermutacao(n1, n2))
+        printf("E permutacao.");
+    else
+        printf("Nao e permutacao.");
+    
     return 0;
 }
 
@@ -30,5 +38,13 @@ int contadigitos(int n, int d)
 }
 int ehPermutacao(int n1, int n2)
 {
+    int permut = 1;
 
+    while(n2)
+    {
+        if(!contadigitos(n1, n2%10))
+            permut = 0;
+        n2 /= 10;
+    }
+    return permut;
 }
