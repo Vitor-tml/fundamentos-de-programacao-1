@@ -20,6 +20,41 @@ mensagem indicando que a condição não foi satisfeita.
  
 int main()
 {
-    printf("Hello Word!");
+    int i, j = 0, aux, paridade, paridadeAnterior = -1;
+    int n = 10;
+    for(i = 1; i <= n; i++)
+    {   
+        paridade = seqImpar(i);
+        if(paridade == -1 || paridade == paridadeAnterior)
+        {
+            printf("nao e'piramidal alternante. paridade\n");
+            return 0;
+        }
+        j += i;
+        if(j > n)
+        {
+            printf("nao e'piramidal alternante. incompleto\n");
+            return 0;
+        }
+        paridadeAnterior = paridade;
+    }
+    printf("E' piramidal alternante.");
     return 0;
+}
+
+int seqImpar(int k)
+{
+    int i, aux, impar;
+
+    scanf("%d", &aux);
+    impar = aux % 2;
+
+    for(i = 1; i < k; i++)
+    {
+        scanf("%d", & aux);
+        
+        if(aux % 2 != impar)
+            impar = -1;
+    }
+    return impar;
 }
