@@ -17,29 +17,37 @@ números inteiros, verifica se ela é piramidal m-alternante. O programa deve im
 mensagem indicando que a condição não foi satisfeita.
 */
 #include <stdio.h>
- //teste
+
 int main()
 {
-    int i, j = 0, aux, paridade, paridadeAnterior = -1;
-    int n = 10;
-    for(i = 1; i <= n; i++)
-    {   
-        paridade = seqImpar(i);
-        if(paridade == -1 || paridade == paridadeAnterior)
+    int n = 10, paridade, paridadeAnterior = -1, i = 0, j;
+    j = 1;
+    while( i < n)
+    {
+        printf("j = %d\n", j);
+        paridade = seqImpar(j);
+        if(paridade == -1)
         {
-            printf("nao e'piramidal alternante. paridade\n");
+            printf("Sequencia sem paridade.i = %d n = %d j = %d\n", i, n, j);
             return 0;
         }
-        j += i;
-        if(j > n)
+        if(paridade == paridadeAnterior)
         {
-            printf("nao e'piramidal alternante. incompleto\n");
+            printf("Sequencia com paridade igual.i = %d n = %d j = %d\n", i, n, j);
             return 0;
         }
         paridadeAnterior = paridade;
+        i += j;     
+        j++;
     }
-    printf("E' piramidal alternante.");
-    return 0;
+
+    if(i > n) 
+    {
+        printf("Sequencia incompleta. i = %d n = %d j = %d\n", i, n, j);
+        return 0;
+    }
+    printf("Eh %d-alternante.i = %d n = %d j = %d\n", j, i, n, j);
+    return 1;
 }
 
 int seqImpar(int k)
