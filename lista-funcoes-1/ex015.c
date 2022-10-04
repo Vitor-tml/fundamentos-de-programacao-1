@@ -17,7 +17,7 @@ números inteiros, verifica se ela é piramidal m-alternante. O programa deve im
 mensagem indicando que a condição não foi satisfeita.
 */
 #include <stdio.h>
- 
+ //teste
 int main()
 {
     int i, j = 0, aux, paridade, paridadeAnterior = -1;
