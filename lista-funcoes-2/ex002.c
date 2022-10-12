@@ -1,3 +1,10 @@
+/*
+Implemente uma função em C que receba os valores a, b e c passados por valor, e receba também dois valores x1 e
+x2 passados por referência. Em seguida, calcule e retorne as duas raízes da equação do segundo grau nas variáveis x1
+e x2. Protótipo:
+int calcula_raizes(float a, float b, float c, float *x1, float *x2);
+Obs: o valor de retorno deve ser um valor int indicando se a equação tem 1, 2 ou nenhuma raiz real.
+*/
 #include <stdio.h>
 #include <math.h>
 

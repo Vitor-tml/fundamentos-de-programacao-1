@@ -1,3 +1,8 @@
+/*
+Implemente um programa em C que leia a quantidade total de segundos e converta para Horas, Minutos e Segundos.
+Imprima o resultado da conversão no formato HH:MM:SS. Para isso, utilize a função com protótipo
+void converteHora(int total segundos, int *hora, int *min, int *seg);
+*/
 #include <stdio.h>
 
 void converteHora(int totalSegundos, int *hora, int *min, int *seg); 
