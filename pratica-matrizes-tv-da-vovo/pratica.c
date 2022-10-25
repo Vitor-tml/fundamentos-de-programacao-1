@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 
 #define NL 1000
 #define NC 1000
@@ -36,7 +37,7 @@ int main()
 
     while (!(x == 0 && y == 0))
     {
-        deslocaMatriz(matriz, m, n, x, y);
+        deslocaMatrix(matriz, m, n, x, y);
         imprimeMatriz(matriz, m, n);
         printf("Entre com o deslocamento: ");
 
@@ -52,7 +53,18 @@ int main()
 
     return 0;
 }
+void deslocaMatrix(int matriz[][NC], int nl, int nc, int x, int y)
+{
+    int i, j;
+    int dx, dy;
+    dx = (x < 0)? -1: 1;
+    dy = (y < 0)? -1: 1;
 
+    for(i = 1; i <= abs(x); i++)
+        deslocaMatriz(matriz, nl, nc, dx, 0);
+    for(j = 1; j <= abs(y); j++)
+        deslocaMatrix(matriz, nl, nc, dy, 1);
+}
 void deslocaMatriz(int matriz[][NC], int nl, int nc, int x, int y)
 {
     int i, j, nx, ny;
