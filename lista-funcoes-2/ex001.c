@@ -4,7 +4,7 @@ void questao01(int *a, int *b);
 int main()
 {
     int a, b;
-
+    printf("%s", teste);
     printf("Entre com a e b: ");
     scanf("%d %d", &a, &b);
 
