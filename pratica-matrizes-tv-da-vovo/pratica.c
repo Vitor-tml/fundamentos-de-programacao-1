@@ -23,6 +23,8 @@ int main()
         return 0;
     }
     preencheMatriz(matriz, m, n, 0, 10);
+    printf("Matriz original: \n");
+    imprimeMatriz(matriz, m, n);
     printf("Entre com o deslocamento: ");
     scanf("%d %d", &x, &y);
 
@@ -32,7 +34,7 @@ int main()
         return 0;
     }
 
-    while (x != 0 && y != 0)
+    while (!(x == 0 && y == 0))
     {
         deslocaMatriz(matriz, m, n, x, y);
         imprimeMatriz(matriz, m, n);
@@ -40,7 +42,7 @@ int main()
 
         scanf("%d %d", &x, &y);
 
-        if(x < 0 || x > NL || y < 0 || y > NL)
+        if(x < -NL || x > NL || y < -NL || y > NL)
         {
             printf("Entrada invalida.");
 
