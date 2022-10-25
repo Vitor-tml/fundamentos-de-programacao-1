@@ -1,3 +1,9 @@
+/*
+Implemente uma função em C que receba dois números inteiros a e b, em seguida, decremente o primeiro e incremente
+o segundo. No exercício, a e b devem ser passados por referência. Depois teste, invocando a função criada.
+Protótipo:
+void questao01(int *a, int *b);
+*/
 #include <stdio.h>
 
 void questao01(int *a, int *b);
