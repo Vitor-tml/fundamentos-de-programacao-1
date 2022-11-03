@@ -2,25 +2,44 @@
 #include <stdlib.h>
 #include "../funcoes-basicas.c"
 
-void criaVetor(int **vet, int tam, int lim);
+void criaVetorPorReferencia(int **vet, int tam, int lim);
+int* criaVetor(int tam, int lim);
 int* expandeVetor(int *v, int tam, int n, int lim);
 int main()
 {
     int *vetor;
-
-    criaVetor(&vetor, 10, 10);
-    imprimeVetor(vetor, 10);
-
-    vetor = expandeVetor(vetor, 10, 5, 10);
-    imprimeVetor(vetor, 15);
+    int tamanho = 10;
+    int limite = 10;
+    
+    criaVetorPorReferencia(&vetor, tamanho, limite);
+    imprimeVetor(&vetor, tamanho);
 
     free(vetor);
     return 0;
 }
-void criaVetor(int **vet, int tam, int lim)
+
+int* criaVetor(int tam, int lim)
 {
-    *vet = (int *) malloc(tam * sizeof(int));
-    preencheVetor(vet, tam, 0, lim);
+    int *vet;
+    vet = (int*) malloc(tam * sizeof(int));
+    if(vet == NULL)
+    {
+        printf("Erro na alocacao,\n");
+        exit(1);
+    }
+    preencheVetor(vet, tam, -lim, lim);
+    return vet;
+}
+
+void  criaVetorPorReferencia(int **vet, int tam, int lim)
+{
+    *vet = (int*) malloc(tam * sizeof(int));
+    if(*vet == NULL)
+    {
+        printf("Erro na alocacao,\n");
+        exit(1);
+    }
+    preencheVetor(vet, tam, -lim, lim);
 }
 
 int* expandeVetor(int *v, int tam, int n, int lim)
@@ -28,7 +47,7 @@ int* expandeVetor(int *v, int tam, int n, int lim)
     int i;
     int *vet;
 
-    criaVetor(&vet, n, lim);
+    criaVetorPorReferencia(&vet, n, lim);
 
     v = (int *) realloc(v, sizeof(int) * (tam + n));
     for(i = 0; i < n; i ++)
