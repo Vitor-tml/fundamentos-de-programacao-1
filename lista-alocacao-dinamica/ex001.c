@@ -12,8 +12,8 @@ int main()
     int limite = 10;
     
     criaVetorPorReferencia(&vetor, tamanho, limite);
-    imprimeVetor(&vetor, tamanho);
-
+    imprimeVetor(vetor, tamanho);
+    expandeVetor(vetor, TAM, n, limite);
     free(vetor);
     return 0;
 }
@@ -39,7 +39,7 @@ void  criaVetorPorReferencia(int **vet, int tam, int lim)
         printf("Erro na alocacao,\n");
         exit(1);
     }
-    preencheVetor(vet, tam, -lim, lim);
+    preencheVetor(*vet, tam, -lim, lim);
 }
 
 int* expandeVetor(int *v, int tam, int n, int lim)
