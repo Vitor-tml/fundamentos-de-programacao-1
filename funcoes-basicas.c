@@ -1,18 +1,14 @@
-#define NL 100
-#define NC 100
-void imprimeVetor(int vetor[], int tamanho);
-void preencheVetor(int vetor[], int tamanho, int limLow, int limHigh);
-
-void imprimeMatrizEstatica(int matriz[][NC], int nl, int nc);
-void preencheMatrizEstatica(int matriz[][NC], int nl, int nc, int limLow, int limHigh);
-void leMatrizEstatica(int matriz[][NC], int nl, int nc);
+#include <time.h>
+void imprimeVetor(int *vetor, int tamanho);
+void preencheVetor(int *vetor, int tamanho, int limLow, int limHigh);
+void leVetor(int *vetor, int tamanho);
 
 void imprimeMatriz(int **matriz, int nl, int nc);
 void preencheMatriz(int **matriz, int nl, int nc, int limLow, int limHigh);
 void leMatriz(int **matriz, int nl, int nc);
 
 //-------------------------------------------------
-void imprimeVetor(int vetor[], int tamanho)
+void imprimeVetor(int *vetor, int tamanho)
 {
     int i;
 
@@ -21,53 +17,30 @@ void imprimeVetor(int vetor[], int tamanho)
     printf("\n");
 }
 //-------------------------------------------------
-void preencheVetor(int vetor[], int tamanho, int limLow, int limHigh)
+void preencheVetor(int *vetor, int tamanho, int limLow, int limHigh)
 {
     int i;
-
+    srand(time(NULL));
     for(i = 0; i < tamanho; i++)
         vetor[i] = limLow + rand()%(limHigh - limLow + 1);
 
 }
 //-------------------------------------------------
-void preencheMatrizEstatica(int matriz[][NC], int nl, int nc, int limLow, int limHigh)
+void leVetor(int *vetor, int tamanho)
 {
-    int i, j;
+    int i;
 
-    for(i = 0; i < nl; i++)
-        for(j = 0; j < nc; j++)
-            matriz[i][j] = limLow + rand()%(limHigh - limLow + 1);
-}
-//-------------------------------------------------
-void imprimeMatrizEstatica(int matriz[][NC], int nl, int nc)
-{
-    int i, j;
-
-    for(i = 0; i < nl; i++)
-    {
-        for(j = 0; j < nc; j++)
-            printf("%2d ", matriz[i][j]);
-        printf("\n");
-    }
-    printf("\n");
-}
-//-------------------------------------------------
-void leMatrizEstatica(int matriz[][NC], int nl, int nc)
-{
-    int i, j;
-
-    for(i = 0; i < nl; i++)
-        for(j = 0; j < nc; j++)
+    for(i = 0; i < tamanho; i++)
         {
-            printf("(%d,%d) = ", i, j);
-            scanf("%d", &matriz[i][j]);
+            printf("(%d)= ", i);
+            scanf("%d", &vetor[i]);
         }
 }
 //-------------------------------------------------
 void preencheMatriz(int **matriz, int nl, int nc, int limLow, int limHigh)
 {
     int i, j;
-
+    srand(time(NULL));
     for(i = 0; i < nl; i++)
         for(j = 0; j < nc; j++)
             matriz[i][j] = limLow + rand()%(limHigh - limLow + 1);
