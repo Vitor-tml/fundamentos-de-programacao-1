@@ -7,7 +7,7 @@ void imprimeMatriz(int **matriz, int nl, int nc);
 void preencheMatriz(int **matriz, int nl, int nc, int limLow, int limHigh);
 void leMatriz(int **matriz, int nl, int nc);
 
-//-------------------------------------------------
+// Imprime vetor passando o endereço e o tamanho desse.
 void imprimeVetor(int *vetor, int tamanho)
 {
     int i;
@@ -16,7 +16,7 @@ void imprimeVetor(int *vetor, int tamanho)
         printf("%d ", vetor[i]);
     printf("\n");
 }
-//-------------------------------------------------
+// Prenche o vetor com numeros entre limLow e limHigh.
 void preencheVetor(int *vetor, int tamanho, int limLow, int limHigh)
 {
     int i;
@@ -25,7 +25,7 @@ void preencheVetor(int *vetor, int tamanho, int limLow, int limHigh)
         vetor[i] = limLow + rand()%(limHigh - limLow + 1);
 
 }
-//-------------------------------------------------
+// Lê vetor indicando qual posição está sendo lida no momento.
 void leVetor(int *vetor, int tamanho)
 {
     int i;
@@ -36,7 +36,7 @@ void leVetor(int *vetor, int tamanho)
             scanf("%d", &vetor[i]);
         }
 }
-//-------------------------------------------------
+// Preenche matriz com numeros entre limLow e limHigh
 void preencheMatriz(int **matriz, int nl, int nc, int limLow, int limHigh)
 {
     int i, j;
@@ -45,7 +45,7 @@ void preencheMatriz(int **matriz, int nl, int nc, int limLow, int limHigh)
         for(j = 0; j < nc; j++)
             matriz[i][j] = limLow + rand()%(limHigh - limLow + 1);
 }
-//-------------------------------------------------
+// Imprime matriz de forma visualmente agradável
 void imprimeMatriz(int **matriz, int nl, int nc)
 {
     int i, j;
@@ -58,7 +58,7 @@ void imprimeMatriz(int **matriz, int nl, int nc)
     }
     printf("\n");
 }
-//-------------------------------------------------
+// Lê matriz indicando qual linha e coluna está sendo lido no momento. Ex (0,1) =
 void leMatriz(int **matriz, int nl, int nc)
 {
     int i, j;
@@ -71,4 +71,3 @@ void leMatriz(int **matriz, int nl, int nc)
         }
 
 }
-//-------------------------------------------------
