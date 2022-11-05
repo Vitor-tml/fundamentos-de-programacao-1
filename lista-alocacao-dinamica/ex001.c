@@ -10,10 +10,10 @@ int main()
     int *vetor;
     int tamanho = 10;
     int limite = 10;
-    
+    int n = 5;
     criaVetorPorReferencia(&vetor, tamanho, limite);
     imprimeVetor(vetor, tamanho);
-    expandeVetor(vetor, TAM, n, limite);
+    expandeVetor(vetor, tamanho, n, limite);
     free(vetor);
     return 0;
 }
